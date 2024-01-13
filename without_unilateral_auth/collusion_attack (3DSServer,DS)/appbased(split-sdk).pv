@@ -298,14 +298,14 @@ process
     new splitSdkServerID: bitstring;
     (* each entitie's reference number *)
     new sdkReferenceNumber: bitstring;
-    new threeDSServerRefNumber: bitstring;
-    new dsReferenceNumber: bitstring;
+    new threeDSServerRefNumber: bitstring; out(c,threeDSServerRefNumber);
+    new dsReferenceNumber: bitstring; out(c,dsReferenceNumber);
     new acsReferenceNumber: bitstring;
     (* Key Pair of DS CA *)
     new Pv_DSCA: sskey;
     let Pb_DSCA = spk(Pv_DSCA) in out(c,Pb_DSCA);
     (* Make a key pair of DS *)
-    new s_ds: skey; 
+    new s_ds: skey; out(c,s_ds);
     let p_ds = pk(s_ds) in out(c,p_ds);
     (* Step1-4: Split-SDK Server's Key Pair *)
     new Pv_SDK: sskey;
